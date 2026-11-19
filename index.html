@@ -1,54 +1,76 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Branch Workflow</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f3eefb;
-            color: #34254d;
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .card {
-            max-width: 600px;
-            margin: auto;
-            padding: 40px;
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px #34254d20;
-        }
-
-        h1 {
-            color: #7652a8;
-        }
-
-        p {
-            line-height: 1.7;
-        }
-
-        button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            background: #7652a8;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Команданың комикс кейіпкерлері туралы беттері">
+  <title>Комикс кейіпкерлері — командалық жоба</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", system-ui, sans-serif;
+      background: #10121b;
+      color: #f5f4fb;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 0%, #593ac333, transparent 35rem),
+        radial-gradient(ellipse at 95% 20%, #e8466d22, transparent 30rem),
+        #10121b;
+    }
+    .shell { width: min(100% - 40px, 1060px); margin-inline: auto; padding: 64px 0 40px; }
+    .eyebrow { color: #b7a6ff; font-size: .78rem; font-weight: 750; letter-spacing: .18em; text-transform: uppercase; }
+    h1 { max-width: 760px; margin: 14px 0 16px; font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -.055em; line-height: .98; }
+    .intro { max-width: 660px; color: #b9bacb; font-size: 1.12rem; line-height: 1.75; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 56px 0 18px; }
+    h2 { margin: 0; font-size: 1.45rem; }
+    .count { color: #9da0b5; font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr)); gap: 16px; }
+    .member-card {
+      position: relative; display: flex; min-height: 190px; flex-direction: column; align-items: flex-start;
+      padding: 24px; overflow: hidden; border: 1px solid #363749; border-radius: 20px;
+      background: linear-gradient(145deg, #202232, #191a27); text-decoration: none; color: inherit;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .member-card::after { position: absolute; right: -30px; bottom: -76px; width: 170px; height: 170px; border: 1px solid #aa8cff33; border-radius: 50%; content: ""; box-shadow: 0 0 0 22px #aa8cff0a, 0 0 0 46px #aa8cff08; }
+    .member-card:hover, .member-card:focus-visible { transform: translateY(-3px); border-color: #9e82ff; background: #242538; outline: none; }
+    .tag { padding: 6px 10px; border: 1px solid #514376; border-radius: 999px; color: #c5b6ff; font-size: .74rem; font-weight: 700; }
+    .member-card h3 { margin: 24px 0 8px; font-size: 1.35rem; }
+    .member-card p { max-width: 320px; margin: 0; color: #aeb0c2; line-height: 1.6; }
+    .open { margin-top: auto; padding-top: 24px; color: #e7dcff; font-size: .9rem; font-weight: 700; }
+    footer { margin-top: 52px; padding-top: 20px; border-top: 1px solid #343545; color: #82869d; font-size: .88rem; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Git Branch Workflow</h1>
-        <p>Бұл жоба Git жүйесіндегі тармақтармен жұмыс істеуді үйренуге арналған.</p>
-        <p>Қазіргі тармақ: feature/website-description</p>
-        <button onclick="alert('Feature успешно работает!')">
-            Тексеру
-        </button>
-    </div>
+  <main class="shell">
+    <header>
+      <span class="eyebrow">Бірлескен GitHub жобасы</span>
+      <h1>Комикс әлемі<br>әр қатысушының көзімен</h1>
+      <p class="intro">Бұл басты бет топ мүшелері дайындаған кейіпкер парақтарын бір жерге жинайды. Карточканы таңдап, қатысушының жұмысын ашыңыз.</p>
+    </header>
+
+    <section aria-labelledby="members-title">
+      <div class="section-heading">
+        <h2 id="members-title">Қатысушылар беттері</h2>
+        <span class="count">1 бет</span>
+      </div>
+      <div class="grid">
+        <a class="member-card" href="PaxMeTxaH-favorite-hero.html">
+          <span class="tag">Комикс кейіпкері</span>
+          <h3>Өрмекші адам</h3>
+          <p>Питер Паркер және оның Нью-Йоркті қорғау оқиғасы.</p>
+          <span class="open">Бетті ашу <span aria-hidden="true">↗</span></span>
+        </a>
+      </div>
+    </section>
+
+    <footer>Командалық жұмыстағы өзгерістер Git тармақтары мен Pull Request арқылы қаралады.</footer>
+  </main>
 </body>
 </html>
